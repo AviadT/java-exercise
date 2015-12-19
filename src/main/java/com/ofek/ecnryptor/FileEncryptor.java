@@ -9,11 +9,12 @@ public class FileEncryptor {
         encryptionAlgorithm = algorithm;
     }
 
-    public String encryptFile(String input_path){
+    public String[] encryptFile(String input_path) throws InvalidPathException{
         return encryptionAlgorithm.encrypt(input_path);
     }
 
-    public String decryptFile(String input_path, String key_path){
+    public String decryptFile(String input_path, String key_path)
+                    throws InvalidEncryptionKeyException, InvalidPathException{
         return encryptionAlgorithm.decrypt(input_path, key_path);
     }
 }
